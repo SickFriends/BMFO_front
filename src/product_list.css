@@ -1,37 +1,57 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 header{
-    position:fixed;
+    display: flex;
+	width: 100%;
 	top:0px;
-	width : 100%;
-	background-color:#18978F;
-	line-height:40px;
+	background-color:white;
 	height:100px;
+	position: fixed;
+	z-index: 2;
+}
+header .mark{
+	color:aquamarine;
+	font-size: 50px;
+	margin-left: 150px;
+	align-self: center;
+	font-family: Impact, Charcoal, sans-serif;
 }
 footer{
     bottom:0px;
-	position:fixed;
-	width:100%;
 	background-color:#18978F;
 	height:50px;
+	position: fixed;
+	width : 100%;
 }
-section{
-    position:fixed;
-	background-color: white;
-	height:100%;
-	width:100%;
-	top:100px;
-	text-align: center;
+.lists{
+	padding-top: 100px;
+	padding-bottom: 50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+	flex-flow: row wrap;
+	font-family: 'GmarketSansMedium';
+	justify-content: center;
+	margin-left: 270px;
+	width: 1000px;
+	height: 100%;
+	
 }
-table{
-    table-layout: fixed;
-    margin-bottom: 100px;
-    border-spacing: 10px;
+.lists div{
+	height:250px;
+	width: 250px;
+	/* align-self: center; */
 }
-td{
-   
-    height: 150px;
-    width:150px;
-    background-color: #C4C4C4;
+img{
+	border-radius: 50%;
+	transition: 1s;
+}
+.lists :hover img{
+	transform: scale(1.15);
+}
+.fixedSize{
+	width: 1408px;
 }
