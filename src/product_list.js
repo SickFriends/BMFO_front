@@ -90,7 +90,7 @@ function Product_list() {
       price: 1500,
     },
   ];
-  for (let i = 0; i < products.length % 5; i++) products.push(tempData);
+  for (let i = 0; i < products.length % 4; i++) products.push(tempData);
   const list = products.map((data) => (
     <div className="prod">
       <img
