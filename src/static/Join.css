@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'EF_hyunygothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_hyunygothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.jointitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    font-size: 55px;
+    font-family: 'EF_hyunygothic';
+}
+
+.inputInfo{
+    display: flex;
+    flex-direction: column;
+}
+.join{
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.join input[type="submit"]{
+    background-color: #007dfd;
+    color: white;
+    font-size: 30px;
+    margin: 10px 10px 10px 5px;
+    width: 170px;
+    height: 115px;
+}
+
+.join input::placeholder{
+    color: white;
+    font-size: 15px;
+}
+
+.join input:focus{
+    outline: none;
+}
+
+.join input{
+    background-color: #c4c4c4;
+    width: 250px;
+    height: 50px;
+    border-radius: 9px;
+    border: 0;
+    padding: 2px;
+    
+}
+
+.join input[type="text"], .join input[type="password"]{
+    font-size: 15px;
+    margin-bottom: 0;
+    margin: 4px;
+    padding-left: 10px;
+}
+
+.join, .login{
+    color: gray;
+}
+
+.loginTop{
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBar{
+    width: 600px;
+    height: 100%;
+    font-size: 50px;
+}
+
+.loginMark{
+    margin-top: 140px;
+    border-bottom: solid 2px #007dfd;
+    color: #007dfd;
+}
+
+body{
+    padding: 0px;
+}

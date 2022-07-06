@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+ul{
+    list-style: none;
+  }
+  
+ a{
+    text-decoration: none;
+    color: black; 
+ }
+.header{
+    width: 100%;
+    height: 113px;
+    background-color: white;
+    display: flex;
+}
+
+.fixedhead{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+
+.mainSearchBar:focus{
+  outline: none;
+}
+
+.search{
+  display: flex;
+}
+
+.mainSearchBar{
+  width: 544px;
+  height: 44px;
+  border-radius: 24px;
+  align-self: center;
+  display: flex;
+  margin-left: 40px;
+  border: solid 2px #1E90FF;
+  background-color: transparent;
+  letter-spacing: -0.5px;
+  font-size: 16px;
+  padding-left: 30px;
+}
+
+button{
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: white;
+  align-self: center;
+  margin-left: -50px;
+  margin-top: 18px;
+}
+
+img{
+  width: 32px;
+  height: 32px;
+}
+  
+  .header .mark{
+    font-size: 50px;
+    margin-left: 150px;
+    font-family: Impact, Charcoal, sans-serif;
+    color: #07b7e0;
+    align-self: center;
+  }
+  
+  .header .nav{
+    display: flex;
+  }
+  
+  .header .nav ul{
+    margin-left: 160px;
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+  }
+  
+ .headerlogin, .user, .cart{
+  margin-right: 50px;
+ }
+
+ .mark, input{
+  margin-top: 20px;
+ }
+
+ .headerlogin, .headerjoin{
+  font-size: 20px;
+  color: gray;
+ }
+
+.category{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px black;
+  background-color: white;
+}
+
+.category ul{
+  display: flex;
+}
+
+.categoryBar{
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.catename{
+  margin-left: 10px;
+  font-size: 18px;
+  font-family: 'GmarketSansMedium';
+}
+
+.snack{
+  margin-left: 25px;
+  font-size: 18px;
+  font-family: 'GmarketSansMedium';
+}
+.iceCream, .drink, .iceFood{
+  margin-left: 90px;
+  font-size: 18px;
+  font-family: 'GmarketSansMedium';
+}

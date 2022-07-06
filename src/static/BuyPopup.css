@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.buyPopup{
+    padding-top: 173px;
+}
+
+.prodImg img{
+   padding-left: 200px;
+   padding-top: 40px;
+   width:500px;
+   height: 500px;
+   position: fixed;
+}
+.Intro{
+    float: right;
+    font-family: 'GmarketSansMedium';
+    display: flex;
+    flex-direction: column;
+    padding-right: 450px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.prodName{
+    font-size: 28px;
+}
+.prodPrice{
+    font-size: 31px;
+    font-weight: bold;
+}
+.selectQuantity{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.selectQuantity button{
+    font-size: 30px;
+    margin: 12px;
+    border:1px solid;
+    border-radius: 30%;
+    text-align: center;
+}
+.totalPrice{
+    font-size: 30px;
+}
+.putInBag{
+    background-color: #07b7e0;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+}
