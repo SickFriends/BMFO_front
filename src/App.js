@@ -1,18 +1,12 @@
 import "./App.css";
-import React from "react";
-import Product_list from "./product_list";
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import BuyPage from './BuyPage';
-
+import {React,useState} from "react";
+import Product_list from "./Product_list";
+import { BrowserRouter, Routes, Route ,useNavigate} from "react-router-dom";
 function App() {
+  const [modal, setModal] = useState(false);
   return (
     <div className="App">
-      <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Product_list/>}></Route>
-        <Route path="/BuyPage/*" element={<BuyPage/>}></Route>
-        </Routes>
-      </BrowserRouter>
+         <Product_list />
     </div>
   );
 }

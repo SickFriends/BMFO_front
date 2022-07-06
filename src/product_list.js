@@ -1,7 +1,8 @@
-import React from "react";
-import "./product_list.css";
+import { React, useState } from "react";
+import "./Product_list.css";
 import { Link } from "react-router-dom";
 function Product_list() {
+  const [modal, setModal] = useState(false);
   let tempData = {
     idx: -1,
     imgsrc: "https://www.analogouscolors.com/jpg/ffffff.jpg",
@@ -90,14 +91,13 @@ function Product_list() {
   for (let i = 0; i < products.length % 4; i++) products.push(tempData);
   const list = products.map((data) => (
     <div className="prod">
-      <Link to="/BuyPage">
-        <img
-          src={data.imgsrc}
-          width="150"
-          height="150"
-          alt="이미지가 표시되지 않음"
-        ></img>
-      </Link>
+      <img
+        onClick={() => setModal(!modal)}
+        src={data.imgsrc}
+        width="150"
+        height="150"
+        alt="이미지가 표시되지 않음"
+      ></img>
       <p>{data.name !== "" ? "이름 : " + data.name : ""}</p>
       <p>{data.price !== "" ? "가격 : " + data.price : ""}</p>
     </div>
@@ -109,7 +109,6 @@ function Product_list() {
           <div className="mark">BSSM</div>
         </header>
         <div className="lists">{list}</div>
-
         <footer>오태식</footer>
       </div>
     </div>
