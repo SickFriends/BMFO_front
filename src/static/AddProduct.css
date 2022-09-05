@@ -1,7 +1,32 @@
-.addCon{
-    margin-top: 200px;
+.addCon {
+  margin-top: 170px;
 }
-.labeling{
-    font-size: 30px;
-    font-family: "GmarketSansMedium";
+form {
+  display: flex;
+  justify-content: space-around;
+}
+.uploadBox {
+  text-align: center;
+  font-family: "GmarketSansMedium";
+  font-size: 30px;
+}
+.imgBox {
+  width: 500px;
+  height: 500px;
+}
+.imgBox img {
+  width: 100%;
+  height: 100%;
+}
+.selectBox {
+  justify-content: space-around;
+  flex-direction: column;
+  display: flex;
+}
+.selectBox input,
+select {
+  border: 1px solid;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
 }
