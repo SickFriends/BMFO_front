@@ -27,6 +27,12 @@ form {
 select {
   border: 1px solid;
   border-radius: 10px;
-  width: 250px;
+  width: 350px;
+  font-family: "GmarketSansMedium";
   height: 50px;
+}
+.selectBox .submit {
+  background-color: #007dfd;
+  font-size: 20px;
+  color: white;
 }

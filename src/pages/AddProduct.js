@@ -4,9 +4,13 @@ export default function AddProduct() {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [imgUrl, setImgUrl] = useState();
-  const [cate, setCate] = useState();
+  const [cate, setCate] = useState("");
   async function onSub(e) {
     e.preventDefault();
+    if(cate === ""){
+      alert("카테고리를 선택해주세요!");
+      return;
+    }
     const form = {
       name: productName,
       price: productPrice,
@@ -51,7 +55,7 @@ export default function AddProduct() {
             <option value="drink">음료수</option>
             <option value="icefood">냉동식품</option>
           </select>
-          <input type="submit" value="제출" />
+          <input type="submit" value="제출" className="submit"/>
         </div>
       </form>
     </div>
