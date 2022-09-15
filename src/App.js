@@ -10,7 +10,6 @@ import Header from "./components/Header";
 function App() {
   return (
     <>
-      <Header />
       <Routes>
         <Route exact path="/login" element={<Loginpage />} />
         <Route exact path="/join" element={<JoinPage />} />
