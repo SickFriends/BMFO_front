@@ -10,14 +10,15 @@ export const Header = styled.div`
     align-items: center;
     p {
         margin-left: 8%;
-        font-size: 50px;
-        font-weight: bold;
+        font-size: 40px;
+        font-weight: 600;
     }
+    z-index: 7;
 `
 export const Category = styled.div`
     font-size: 120%;
     font-weight: bold;
-    margin-left: ${({first}) => first ? '10%' : '4.5%'};
+    margin-left: ${({first}) => first ? '15%' : '4.5%'};
 `
 export const Icon = styled.div`
     width: 2.5%;

@@ -1,5 +1,7 @@
 import React from "react";
 import * as H from "./header.style"
+import {AiOutlineUser} from "react-icons/ai"
+import {BsCart4} from "react-icons/bs"
 
 const Header = () => {
     return(
@@ -10,8 +12,8 @@ const Header = () => {
             <H.Category>음료수</H.Category>
             <H.Category>냉동식품</H.Category>
             <H.Category>식품 추가</H.Category>
-            <H.Icon firstIcon={true}><img style={{width : "100%"}} src="user 1.png" /></H.Icon>
-            <H.Icon><img style={{width : "100%"}} src="shopping-cart 1.png" /></H.Icon>
+            <H.Icon firstIcon={true}><AiOutlineUser size={40}/></H.Icon>
+            <H.Icon><BsCart4 size={40} /></H.Icon>
         </H.Header>
     )
 }
