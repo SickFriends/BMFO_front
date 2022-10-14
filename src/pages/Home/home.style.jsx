@@ -2,21 +2,12 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div`
     width: 100%;
-    height: calc(100vh - 15vh);
+    height: auto;
     margin-top: 15vh;
     img{
-        height: 340px;
+        height: 380px;
     }
 `
-// export const BannerBox = styled.div`
-//     width: 100%;
-//     height: 40vh;
-//     background-color: blue;
-//     img {
-//         width: 100%;
-//         height: 80%;
-//     }
-// `
 
 export const Input = styled.input`
     :focus{
@@ -32,15 +23,24 @@ export const Input = styled.input`
 
 export const InputBox = styled.div`
     width: 40%;
-    height: 7vh;
-    margin:10vh 29%;
+    height: 8vh;
+    margin: 6vh 29% 0 29%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     display: flex;
     align-items: center;
     img{
-        width: 8%;
-        height: 90%;
+        width: 10%;
+        height: 100%;
+    }
+`
+export const ItemsBox = styled.div`
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    div span {
+        margin-top: 10px;
     }
 `
