@@ -20,6 +20,7 @@ export const Category = styled.div`
     font-size: 1.5vw;
     font-weight: bold;
     margin-left: ${({first}) => first ? '15%' : '4.5%'};
+    color: black;
 `
 export const Icon = styled.div`
     width: 2.5%;
