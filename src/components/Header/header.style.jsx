@@ -2,21 +2,22 @@ import styled from "styled-components";
 
 export const Header = styled.div`
     background-color: #F5F5F5;
-    height: 15vh;
+    height: 115px;
     width: 100%;
     position: fixed;
     top: 0;
     display: flex;
     align-items: center;
     p {
-        margin-left: 8%;
-        font-size: 40px;
+        margin-left: 7%;
+        font-size: 34px;
         font-weight: 600;
     }
     z-index: 7;
 `
 export const Category = styled.div`
-    font-size: 120%;
+    width: auto;
+    font-size: 1.5vw;
     font-weight: bold;
     margin-left: ${({first}) => first ? '15%' : '4.5%'};
 `

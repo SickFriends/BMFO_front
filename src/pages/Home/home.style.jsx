@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainContainer = styled.div`
     width: 100%;
     height: auto;
-    margin-top: 15vh;
+    margin-top: 115px;
     img{
         height: 380px;
     }
