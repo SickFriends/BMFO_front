@@ -16,6 +16,5 @@ export const ProductBox = styled.div`
     div img {
         width: 60%;
         height: 60%;
-
     }
 `
