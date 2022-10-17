@@ -5,7 +5,7 @@ const ProductList = (props) => {
             <div>
                 <img src={props.imgsrc} />
             </div>
-            <span style={{fontWeight : "bold"}}>{props.name}</span>
+            <span style={{fontWeight : "bold", fontSize: "1.3rem"}}>{props.name}</span>
             <span>₩{props.price}</span>
         </P.ProductBox>
     )
