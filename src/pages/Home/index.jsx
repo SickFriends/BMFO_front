@@ -166,7 +166,6 @@ const Home = () => {
       };
     return (
         <>
-        <Header />
         <M.MainContainer>
             <Carousel dynamicHeight={false} showThumbs={false} showIndicators={false} showStatus={false}>
                 <img src="maple.jpg" />
