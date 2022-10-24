@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const container = styled.div`
     width: 70%;
-    height: 65%;
+    height: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 12%;
     display: flex;
     justify-content: space-between;
+    padding-top: 5%;
 `
 
 export const imgBox = styled.div`
     background-color: #ECECEC;
-    width: 40%;
+    width: 45%;
     height: 100%;
     display: flex;
     align-items: center;
