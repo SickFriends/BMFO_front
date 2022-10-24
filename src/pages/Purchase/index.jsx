@@ -14,7 +14,18 @@ const Purchase = () => {
                 <P.titleBox>스윙칩</P.titleBox>
                 <P.priceBox>₩1,400</P.priceBox>
                 <P.count>수량</P.count>
-                <P.IncDec><AiOutlineMinusCircle size={30}/><div>{count}</div><AiOutlinePlusCircle size={30} /></P.IncDec>
+                <P.IncDec>
+                    <AiOutlineMinusCircle size={30} onClick={() => {
+                        console.log("d")
+                        if(count > 0){
+                            setCount(count-1);
+                        }
+                    }}/>
+                    <div>{count}</div>
+                    <AiOutlinePlusCircle size={30} onClick={() => {
+                        console.log("d");
+                        setCount(count+1);
+                    }} /></P.IncDec>
                 <P.buttons><button>장바구니</button><button>구매하기</button></P.buttons>
             </P.saleBox>
         </P.container>
