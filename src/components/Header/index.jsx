@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return(
         <H.Header>
-            <p><Link>BMFO</Link></p>
+            <p><Link to="/">BMFO</Link></p>
             <H.CategoryBox>
             <H.Category first={true}><Link>과자</Link></H.Category>
             <H.Category><Link>아이스크림</Link></H.Category>
