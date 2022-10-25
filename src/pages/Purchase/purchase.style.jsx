@@ -68,5 +68,7 @@ export const buttons = styled.div`
         font-size: 120%;
         border: 2px solid rgba(0, 0, 0, 0.5);
         border-radius: 5px;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 600;
     }
 `
