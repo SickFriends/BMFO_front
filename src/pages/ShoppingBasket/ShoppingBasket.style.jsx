@@ -23,5 +23,7 @@ export const MainBox = styled.div`
 `
 
 export const ProductList = styled.div`
-    background-color: blue;
+    background-color: black;
+    width: 45%;
+    height: 100%;
 `
