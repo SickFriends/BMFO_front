@@ -20,10 +20,18 @@ export const MainBox = styled.div`
     height: 84%;
     margin-top: 1%;
     background-color: blue;
+    display: flex;
+    justify-content: space-between;
 `
 
 export const ProductList = styled.div`
     background-color: black;
-    width: 45%;
+    width: 48%;
+    height: 100%;
+`
+
+export const ButtonBox = styled.div`
+    background-color: red;
+    width: 48%;
     height: 100%;
 `

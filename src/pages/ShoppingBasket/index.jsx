@@ -6,6 +6,7 @@ const ShoppingBasket = () => {
             <S.Title>장바구니</S.Title>
             <S.MainBox>
                 <S.ProductList></S.ProductList>
+                <S.ButtonBox></S.ButtonBox>
             </S.MainBox>
         </S.Container>
     )
