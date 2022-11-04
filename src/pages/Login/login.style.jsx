@@ -6,19 +6,19 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content : center;
   p {
     cursor: pointer;
     font-weight: bold;
     color: #426ee1;
   }
-  > button {
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 2%;
-    width: 7vw;
-    height: 5vh;
+  >button{
+    border-radius : 5px;
+    border : none;
+    font-size : 16px;
+    font-weight : bold;
+    width : 7vw;
+    height : 5vh;
     white-space:nowrap; 
   }
 `;
@@ -26,9 +26,8 @@ export const InputContainer = styled.div`
   width: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: auto;
-  height: 35vh;
+  justify-content : space-around;
+  height: 15vh;
   > input {
     font-weight: bold;
     border: 1px solid;
@@ -38,22 +37,9 @@ export const InputContainer = styled.div`
     height: 6vh;
     border-radius: 5px;
   }
-  > span {
-    opacity: 0.5;
-    font-size: 0.8vw;
-    font-weight: bold;
-  }
-`;
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 25vw;
-  > input {
-    width: 3vw;
-    height: 3vh;
-  }
-  > span {
-    font-size: 0.5vh;
-    font-weight: bold;
+  > span{
+    opacity : 0.5;
+    font-size : 0.8vw;
+    font-weight : bold;
   }
 `;
