@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content : center;
   p {
     cursor: pointer;
     font-weight: bold;
@@ -14,7 +13,9 @@ export const Wrapper = styled.div`
   }
   >button{
     border-radius : 5px;
-    border : none;
+    background-color: #5bcef5;
+    color : white;
+    border: none;
     font-size : 16px;
     font-weight : bold;
     width : 7vw;
@@ -27,7 +28,7 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content : space-around;
-  height: 15vh;
+  height: 20vh;
   > input {
     font-weight: bold;
     border: 1px solid;

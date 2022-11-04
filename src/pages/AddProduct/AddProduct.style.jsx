@@ -70,9 +70,9 @@ export const Button = styled.button`
     height: 12%;
     margin-top: 12%;
     font-size: 200%;
-    color: rgb(0, 0, 0, 0.6);
-    background-color: white;
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    color : white;
+    background-color: #5bcef5;
+    border: none;
     border-radius: 5px;
     font-weight: 600;
 `

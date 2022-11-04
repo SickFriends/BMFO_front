@@ -13,6 +13,8 @@ export const Wrapper = styled.div`
   }
   > button {
     border-radius: 5px;
+    background-color: #5bcef5;
+    color : white;
     border: none;
     font-size: 16px;
     font-weight: bold;

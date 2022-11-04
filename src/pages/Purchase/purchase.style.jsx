@@ -61,14 +61,15 @@ export const buttons = styled.div`
     width: 60%;
     display: flex;
     justify-content: space-between;
+    
     button{
         width: 40%;
         height: 130%;
-        background-color: white;
+        background-color: #5bcef5;
+        color : white;
         font-size: 120%;
-        border: 2px solid rgba(0, 0, 0, 0.5);
+        border : none;
         border-radius: 5px;
-        color: rgba(0, 0, 0, 0.6);
         font-weight: 600;
     }
 `
