@@ -44,7 +44,7 @@ export const ImgBox = styled.div`
 `
 export const NameAndPriceBox = styled.div`
     width: 30%;
-    height: 60%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
