@@ -58,11 +58,15 @@ export const Sum = styled.div`
         color:red;
     }
 `
+
 export const SetPasswordButton = styled.button`
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     width: 167px;
     height: 59px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+    font-size: 25px;
 `
 
 export const PurchaseButton = styled.button`
@@ -70,4 +74,7 @@ export const PurchaseButton = styled.button`
     border-radius: 5px;   
     width: 242px;
     height: 85px;
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700;
 `
