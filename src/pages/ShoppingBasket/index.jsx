@@ -80,7 +80,7 @@ const ShoppingBasket = () => {
                     <S.Cost>상품금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₩{allPrice}원</S.Cost>
                     <S.Cost>할인금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₩0원</S.Cost>
                     <S.Sum>
-                        <div>합계</div>
+                        <div>합계 &nbsp;</div>
                         <div>₩{allPrice}원</div>
                     </S.Sum>
                     <S.SetPasswordButton>비밀번호 설정</S.SetPasswordButton>
