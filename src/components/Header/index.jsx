@@ -17,7 +17,7 @@ const Header = () => {
             </H.CategoryBox>
             <H.IconBox>
             <H.Icon firstIcon={true}><Link><AiOutlineUser size={40}/></Link></H.Icon>
-            <H.Icon><Link><BsCart4 size={40} /></Link></H.Icon>
+            <H.Icon><Link to="/shoppingBasket"><BsCart4 size={40} /></Link></H.Icon>
             </H.IconBox>
         </H.Header>
     )
