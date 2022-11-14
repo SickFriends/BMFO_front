@@ -23,11 +23,11 @@ export const MainBox = styled.div`
 `
 
 export const ProductList = styled.div`  
-    width: 50%;
+    width: 52%;
     height: auto;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    padding: 0;
 `
 
 export const ButtonBox = styled.div`
