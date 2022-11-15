@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     width: 80%;
-    height: 90%;
+    height: 88%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 0;
@@ -17,7 +17,6 @@ export const Title = styled.div`
 export const MainBox = styled.div`
     width: 100%;
     height: auto;
-    margin-top: 1%;
     display: flex;
     justify-content: space-between;
 `
