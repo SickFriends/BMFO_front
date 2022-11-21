@@ -8,6 +8,10 @@ import Signup from "./pages/Signup";
 import AddProduct from "./pages/AddProduct";
 import ShoppingBasket from "./pages/ShoppingBasket";
 import Login from "./pages/Login";
+import Snack from "./pages/Snack";
+import IceCream from "./pages/IceCream";
+import Drink from "./pages/Drink";
+import FrozenFood from "./pages/FrozenFood";
 function App() {
   return (
     <>
@@ -19,6 +23,10 @@ function App() {
         <Route exact path="/addProduct" element={<AddProduct />} />
         <Route exact path="/shoppingBasket" element={<ShoppingBasket />} />
         <Route exact path="/login" element={<Login />}></Route>
+        <Route exact path="/snack" element={<Snack />}></Route>
+        <Route exact path="/iceCream" element={<IceCream />}></Route>
+        <Route exact path="/drink" element={<Drink />}></Route>
+        <Route exact path="/frozenFood" element={<FrozenFood />}></Route>
       </Routes>
     </>
   );
