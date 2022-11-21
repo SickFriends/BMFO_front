@@ -9,10 +9,10 @@ const Header = () => {
         <H.Header>
             <p><Link to="/">BMFO</Link></p>
             <H.CategoryBox>
-            <H.Category first={true}><Link>과자</Link></H.Category>
-            <H.Category><Link>아이스크림</Link></H.Category>
-            <H.Category><Link>음료수</Link></H.Category>
-            <H.Category><Link>냉동식품</Link></H.Category>
+            <H.Category first={true}><Link to="/snack">과자</Link></H.Category>
+            <H.Category><Link to="/iceCream">아이스크림</Link></H.Category>
+            <H.Category><Link to="/drink">음료수</Link></H.Category>
+            <H.Category><Link to="/frozenFood">냉동식품</Link></H.Category>
             <H.Category><Link to="/addProduct">식품 추가</Link></H.Category>
             </H.CategoryBox>
             <H.IconBox>

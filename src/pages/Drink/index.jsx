@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {GrSearch} from "react-icons/gr"
 import ProductList from "../../components/ProductList";
 import Footer from "../../components/Footer";
-const Home = () => {
+const Drink = () => {
     const items = {
         snack: [
           {
@@ -187,4 +187,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Drink;
