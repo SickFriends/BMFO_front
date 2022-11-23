@@ -33,11 +33,14 @@ const Home = () => {
                 <M.Input />
                 <GrSearch size={40} />
             </M.InputBox>
+            {items.length === 0 ? <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '30px', marginTop: '30px'}}>아직 제품이 없습니다...</div> : 
             <M.ItemsBox>
-                {items.map((data, index) => (
+              {items.map((data, index) => (
                     <ProductList imgsrc={data.imgUrl} name={data.name} price={data.price} id={data.productId} />
                 ))}
+                
             </M.ItemsBox>
+            }
             
         </M.MainContainer>
         <Footer />
