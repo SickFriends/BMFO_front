@@ -52,15 +52,16 @@ const AddProduct = () => {
                         <input placeholder="가격" type="text" value={price} onChange={(e) => {
                             setPrice(e.target.value);
                         }} />
-                    </A.InputBox>
-                    <select onChange={(e) => {
+                        <select onChange={(e) => {
                         setCategory(e.target.value);
-                    }}>
-                        <option value={"snack"}>과자</option>
-                        <option value={"icecream"}>아이스크림</option>
-                        <option value={"frozenfood"}>냉동식품</option>
-                        <option value={"drink"}>음료수</option>
-                    </select>
+                        }}>
+                            <option value={"snack"}>과자</option>
+                            <option value={"icecream"}>아이스크림</option>
+                            <option value={"frozenfood"}>냉동식품</option>
+                            <option value={"drink"}>음료수</option>
+                        </select>
+                    </A.InputBox>
+                    
                     <A.Button onClick={addProduct}>추가하기</A.Button>
                 </A.InfoBox>
             </A.AddBox>

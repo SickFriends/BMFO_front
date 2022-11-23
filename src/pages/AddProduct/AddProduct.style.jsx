@@ -16,7 +16,7 @@ export const title = styled.div`
 
 export const AddBox = styled.div`
     width: 100%;
-    height: 90%;
+    height: 88%;
     display: flex;
     justify-content: space-between;
 `
@@ -47,14 +47,14 @@ export const InfoBox = styled.div`
 
 export const InputBox = styled.div`
     width: 100%;
-    height: 30%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     input{
         width: 70%;
-        height: 38%;
+        height: 25%;
         border: 1px solid rgba(0, 0, 0, 0.5);
         border-radius: 5px;
         font-size: 150%;
@@ -67,6 +67,14 @@ export const InputBox = styled.div`
             font-weight: 600;
             line-height: 100%;
         }
+    }
+    select{
+        width: 70%;
+        height: 25%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        font-size: 150%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 `
 export const Button = styled.button`
