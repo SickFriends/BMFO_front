@@ -9,18 +9,20 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 const Snack = () => {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(null);
   useEffect(() => {
+    setLoading(true)
     axios.get("http://127.0.0.1:8080/product/findbycate?category=snack")
     .then(res => {
       setItems(res.data);
+      setLoading(false);
     })
     .catch(err => {
       console.log(err);
     })
-    setLoading(false);
+    console.log(items);
+    
   }, []);
-    if(loading) return <>...</>
     return (
         <>
         <M.MainContainer>
@@ -32,14 +34,15 @@ const Snack = () => {
                 <M.Input />
                 <GrSearch size={40} />
             </M.InputBox>
-            {items.length === 0 ? <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '30px', marginTop: '30px'}}>아직 제품이 없습니다...</div> : 
+            {loading ?  <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '30px', marginTop: '30px'}}>로딩중...</div>:<>{items.length === 0 ? <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '30px', marginTop: '30px'}}>아직 제품이 없습니다...</div> : 
             <M.ItemsBox>
               {items.map((data, index) => (
                     <ProductList imgsrc={data.imgUrl} name={data.name} price={data.price} id={data.productId} />
                 ))}
                 
             </M.ItemsBox>
-            }
+            }</>}
+            
             
         </M.MainContainer>
         <Footer />

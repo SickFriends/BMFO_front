@@ -14,6 +14,7 @@ const FrozenFood = () => {
     axios.get("http://127.0.0.1:8080/product/findbycate?category=frozenfood")
     .then(res => {
       setItems(res.data);
+      setLoading(false)
     })
     .catch(err => {
       console.log(err);
@@ -31,14 +32,14 @@ const FrozenFood = () => {
                 <M.Input />
                 <GrSearch size={40} />
             </M.InputBox>
-            {items.length === 0 ? <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '30px', marginTop: '30px'}}>아직 제품이 없습니다...</div> : 
+            {loading ?  <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '30px', marginTop: '30px'}}>로딩중...</div>:<>{items.length === 0 ? <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '30px', marginTop: '30px'}}>아직 제품이 없습니다...</div> : 
             <M.ItemsBox>
               {items.map((data, index) => (
                     <ProductList imgsrc={data.imgUrl} name={data.name} price={data.price} id={data.productId} />
                 ))}
                 
             </M.ItemsBox>
-            }
+            }</>}
             
         </M.MainContainer>
         <Footer />
