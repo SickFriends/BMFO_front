@@ -2,17 +2,36 @@ import * as P from "./purchase.style";
 import {AiOutlinePlusCircle} from "react-icons/ai";
 import {AiOutlineMinusCircle} from "react-icons/ai";
 import { useState } from "react";
+import { useParams } from "react-router-dom"
+import { useEffect } from "react";
+import axios from "axios";
 
 const Purchase = () => {
     const [count, setCount] = useState(0);
+    const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(null);
+    const params = useParams();
+    const id = params.id;
+    useEffect(() => {
+        setLoading(true)
+        axios.get(`http://127.0.0.1:8080/product/getOneProduct?id=${id}`)
+        .then(res => {
+            setProduct(res.data);
+            setLoading(false);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }, []);
+    if(loading) return <>...</>
     return (
         <P.container>
             <P.imgBox>
-                <img src="https://sitem.ssgcdn.com/00/00/76/item/1000010760000_i1_1200.jpg"/>
+                <img src={product.imgUrl}/>
             </P.imgBox>
             <P.saleBox>
-                <P.titleBox>스윙칩</P.titleBox>
-                <P.priceBox>₩1,400</P.priceBox>
+                <P.titleBox>{product.name}</P.titleBox>
+                <P.priceBox>₩{product.price}</P.priceBox>
                 <P.count>수량</P.count>
                 <P.IncDec>
                     <AiOutlineMinusCircle size={30} onClick={() => {

@@ -18,7 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/purchase" element={<Purchase />} />
+        <Route exact path="/purchase/:id" element={<Purchase />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/addProduct" element={<AddProduct />} />
         <Route exact path="/shoppingBasket" element={<ShoppingBasket />} />

@@ -1,8 +1,11 @@
 import * as P from "./productList.style"
 const ProductList = (props) => {
+    const purchase = () => {
+        window.location.replace(`/purchase/${props.id}`);
+    }
     return (
         <P.ProductBox>
-            <div>
+            <div onClick={purchase}>
                 <img src={props.imgsrc} />
             </div>
             <span style={{fontWeight : "bold", fontSize: "1.3rem"}}>{props.name}</span>
