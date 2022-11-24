@@ -30,6 +30,9 @@ export const CategoryBox = styled.div`
 
 export const Category = styled.div`
     width: auto;
+    height: ${props => props.bar ? '48px' : '60px'};
+    line-height: ${props => props.bar ? '48px' : '60px'};
+    border-top: ${props => props.bar ? '6px solid #959595' : 'none'};
     font-size: 1.4rem;
     font-weight: bold;
     color: black;
