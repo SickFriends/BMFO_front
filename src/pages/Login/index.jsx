@@ -13,6 +13,7 @@ export default function Login() {
       .then((res) => {
         localStorage.setItem("token", res.data);
         console.log(res.data);
+        window.location.replace("/");
       })
       .catch((err) => {
         console.log(err);
