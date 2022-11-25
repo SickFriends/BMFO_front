@@ -23,6 +23,17 @@ const Purchase = () => {
             console.log(err);
         })
     }, []);
+    const put = () => {
+        const data = {productId: product.productId, cnt: count, ownerId: localStorage.getItem("token")};
+        console.log(data);
+        axios.post("http://127.0.0.1:8080/shoppingBasket/putProduct", data)
+        .then(res => {
+            window.location.replace("/");
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
     if(loading) return <>...</>
     return (
         <P.container>
@@ -43,7 +54,7 @@ const Purchase = () => {
                     <AiOutlinePlusCircle size={30} onClick={() => {
                         setCount(count+1);
                     }} /></P.IncDec>
-                <P.buttons><button>장바구니</button><button>구매하기</button></P.buttons>
+                <P.buttons><button onClick={put}>장바구니</button></P.buttons>
             </P.saleBox>
         </P.container>
     )

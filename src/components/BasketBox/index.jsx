@@ -4,33 +4,24 @@ import {AiOutlineMinusCircle} from "react-icons/ai";
 import { useState } from 'react';
 
 const BasketBox = (props) => {
-    const [count, setCount] = useState(props.data.num);
+    const [count, setCount] = useState(props.data.count);
     return(
         <B.ProductBox>
             <B.LeftBox>
-                <B.ImgBox><img src={props.data.imgsrc} /></B.ImgBox>
+                <B.ImgBox><img src={props.data.product.imgUrl} /></B.ImgBox>
                 <B.NameAndPriceBox>
-                    <div>{props.data.name}</div>
-                    <div>₩{props.data.price}</div>
+                    <div>{props.data.product.name}</div>
+                    <div>₩{props.data.product.price}</div>
                 </B.NameAndPriceBox>
                 <B.CountBox>
                     <div>수량</div>
-                    <div>
-                    <AiOutlineMinusCircle size={50} onClick={() => {
-                        if(count > 0){
-                            setCount(count-1);
-                        }
-                    }}/>
-                    <div>{count}</div>
-                    <AiOutlinePlusCircle size={50} onClick={() => {
-                        setCount(count+1);
-                    }} />
+                        <div>
+                        <div>{count}</div>
                     </div>
                 </B.CountBox>
             </B.LeftBox>
             <B.RightBox>
-                <div>₩{count*props.data.price}</div>
-                <button>바로 구매하기</button>
+                <div>₩{count*props.data.product.price}</div>
             </B.RightBox>
         </B.ProductBox>
     )
