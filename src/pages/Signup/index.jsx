@@ -13,6 +13,7 @@ export default function Signup() {
       .post("http://localhost:8080/user/signup", form)
       .then((res) => {
         console.log(res.data);
+        window.location.href = "/";
       })
       .catch((err) => {
         console.log(err);

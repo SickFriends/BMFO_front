@@ -12,7 +12,6 @@ export default function Login() {
       .post("http://localhost:8080/user/login", form)
       .then((res) => {
         localStorage.setItem("token", res.data);
-        console.log(res.data);
         window.location.replace("/");
       })
       .catch((err) => {
