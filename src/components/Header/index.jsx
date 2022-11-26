@@ -54,7 +54,7 @@ const Header = () => {
             <H.Category><Link to="/addProduct">식품 추가</Link></H.Category>
             </H.CategoryBox>
             <H.IconBox>
-            <H.Icon firstIcon={true}><Link><AiOutlineUser size={40}/></Link></H.Icon>
+            <H.Icon firstIcon={true} onClick ={() => {localStorage.getItem("token") ? localStorage.removeItem("token") : window.location.href = "/login"}}><Link><AiOutlineUser size={40}/></Link></H.Icon>
             <H.Icon><Link to="/shoppingBasket"><BsCart4 size={40} /></Link></H.Icon>
             </H.IconBox>
         </H.Header>
