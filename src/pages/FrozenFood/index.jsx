@@ -19,6 +19,7 @@ const FrozenFood = () => {
     })
     .catch(err => {
       console.log(err);
+      setLoading(false);
     })
   }, []);
   const search = async() => {
