@@ -20,6 +20,7 @@ const Home = () => {
       })
       .catch(err => {
         console.log(err);
+        setLoading(false);
       })
   }, []);
   const search = async() => {

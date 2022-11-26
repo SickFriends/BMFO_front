@@ -23,8 +23,8 @@ const AddProduct = () => {
         const form = new FormData();
         form.append("name", name);
         form.append("img", img);
-        form.append("price", price);
         form.append("category", category);
+        form.append("price", price);
         await axios.post("http://127.0.0.1:8080/product/addProduct", form)
         .then(res => {
             console.log("성공");

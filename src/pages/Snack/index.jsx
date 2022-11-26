@@ -20,6 +20,7 @@ const Snack = () => {
     })
     .catch(err => {
       console.log(err);
+      setLoading(false);
     })
     console.log(items);
     
