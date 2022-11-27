@@ -18,15 +18,15 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/purchase/:id" element={<Purchase />} />
+        {/* <Route exact path="/purchase/:id" element={<Purchase />} /> */}
         <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/addProduct" element={<AddProduct />} />
-        <Route exact path="/shoppingBasket" element={<ShoppingBasket />} />
+        {/* <Route exact path="/addProduct" element={<AddProduct />} /> */}
+        {/* <Route exact path="/shoppingBasket" element={<ShoppingBasket />} /> */}
         <Route exact path="/login" element={<Login />}></Route>
-        <Route exact path="/snack" element={<Snack />}></Route>
-        <Route exact path="/iceCream" element={<IceCream />}></Route>
-        <Route exact path="/drink" element={<Drink />}></Route>
-        <Route exact path="/frozenFood" element={<FrozenFood />}></Route>
+        {/* <Route exact path="/snack" element={<Snack />}></Route> */}
+        {/* <Route exact path="/iceCream" element={<IceCream />}></Route> */}
+        {/* <Route exact path="/drink" element={<Drink />}></Route> */}
+        {/* <Route exact path="/frozenFood" element={<FrozenFood />}></Route> */}
       </Routes>
     </>
   );
