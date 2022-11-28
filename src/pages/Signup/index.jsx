@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import * as S from "./signup.style";
 export default function Signup() {
   const [id, setId] = useState("");
+  const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   function sub() {
-    const form = { username: id, password: pwd };
+    const form = { username: id, password: pwd, email: email };
     console.log(form);
     axios
-      .post("http://localhost:8080/user/signup", form)
+      .post("api/auth/signup", form)
       .then((res) => {
-        console.log(res.data);
         window.location.href = "/";
       })
       .catch((err) => {
@@ -26,9 +26,16 @@ export default function Signup() {
         <span>새 BMFO에 사용될 이메일/아이디 입니다.</span>
         <input
           type="text"
-          placeholder="이메일/아이디"
+          placeholder="아이디"
           onChange={(e) => {
             setId(e.target.value);
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="이메일"
+          onChange={(e) => {
+            setEmail(e.target.value);
           }}
         ></input>
         <input
