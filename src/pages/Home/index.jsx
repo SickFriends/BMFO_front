@@ -91,6 +91,14 @@ const Home = () => {
         ) : (
           <h1></h1>
         )}
+        <a
+          style={{ textDecoration: "underline", color: "blue" }}
+          onClick={() => {
+            navigate("/myOrders");
+          }}
+        >
+          내 주문 히스토리 확인
+        </a>
         <M.InputBox>
           <M.Input
             onChange={(e) => {
