@@ -12,7 +12,15 @@ import Snack from "./pages/Snack";
 import IceCream from "./pages/IceCream";
 import Drink from "./pages/Drink";
 import FrozenFood from "./pages/FrozenFood";
+import getUser from "./api/getUser";
+import { userState } from "./store/user";
+import { useRecoilState } from "recoil";
+import { useEffect } from "react";
+import Logout from "./components/Logout";
+import { OrderDetail } from "./components/OrderDetail";
 function App() {
+  const [user, setUser] = useRecoilState(userState);
+
   return (
     <>
       <Header />
@@ -23,7 +31,13 @@ function App() {
         <Route exact path="/addProduct" element={<AddProduct />} />
         <Route exact path="/shoppingBasket" element={<ShoppingBasket />} />
         <Route exact path="/login" element={<Login />}></Route>
+        <Route exact path="/logout" element={<Logout />}></Route>
         <Route exact path="/snack" element={<Snack />}></Route>
+        <Route
+          exact
+          path="/orderDetail/:orderId"
+          element={<OrderDetail />}
+        ></Route>
         <Route exact path="/iceCream" element={<IceCream />}></Route>
         <Route exact path="/drink" element={<Drink />}></Route>
         <Route exact path="/frozenFood" element={<FrozenFood />}></Route>

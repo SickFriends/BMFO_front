@@ -7,12 +7,11 @@ export default function Login() {
   const [pwd, setPwd] = useState("");
   function sub() {
     const form = { username: id, password: pwd };
-    console.log(form);
     axios
-      .post("http://localhost:8080/user/login", form)
+      .post("/api/auth/login", form)
       .then((res) => {
-        localStorage.setItem("token", res.data);
-        window.location.replace("/");
+        console.log(res.data);
+        window.location.href = "/";
       })
       .catch((err) => {
         console.log(err);
