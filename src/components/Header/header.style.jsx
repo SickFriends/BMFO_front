@@ -44,6 +44,8 @@ export const IconBox = styled.div`
 `
 
 export const Icon = styled.div`
+    display: flex;
+    flex-direction: column;
     width: auto;
     margin-right: 25%;
 `
