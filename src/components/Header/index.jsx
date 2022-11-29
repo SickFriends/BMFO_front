@@ -80,9 +80,9 @@ const Header = () => {
               : (window.location.href = "/login");
           }}
         >
-          <Link>
+          <Link style={{ display: 'flex', flexDirection: 'column'}} to={user.isLogin ? "/myOrders" : ""}>
             <AiOutlineUser size={40} />
-            {user.isLogin ? user.username + "님" : "로그인"}
+            <span>{user.isLogin ? user.username + "님" : "로그인"}</span>
           </Link>
         </H.Icon>
         <H.Icon>
