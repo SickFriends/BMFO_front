@@ -19,6 +19,7 @@ import { useEffect } from "react";
 import Logout from "./components/Logout";
 import { OrderDetail } from "./components/OrderDetail";
 import { MyOrders } from "./pages/MyOrders";
+import AdminPage from "./pages/AdminPage";
 function App() {
   const [user, setUser] = useRecoilState(userState);
 
@@ -43,6 +44,7 @@ function App() {
         <Route exact path="/iceCream" element={<IceCream />}></Route>
         <Route exact path="/drink" element={<Drink />}></Route>
         <Route exact path="/frozenFood" element={<FrozenFood />}></Route>
+        <Route exact path="/adminPage" element={<AdminPage/>}></Route>
       </Routes>
     </>
   );
