@@ -17,6 +17,7 @@ export const MyOrders = () => {
   const [inOrders, setInOrders] = useState([]);
   const navigate = useNavigate();
   const [user, setUser] = useRecoilState(userState);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     axios.get("/api/order/getMyOrders?page=" + page).then(({ data }) => {
@@ -25,9 +26,11 @@ export const MyOrders = () => {
     });
   }, [page]);
   useEffect(() => {
+    setIsLoading(true);
     axios.get("api/order/getMyActivatedOrders").then((res) => {
       console.log(res.data);
       setInOrders([...res.data]);
+      setIsLoading(false);
     }); 
   }, []);
   const activatedOrder = inOrders.map((data, idx) => (<ActivatedOrder key={idx} index={idx} data={data} />))
@@ -68,6 +71,7 @@ export const MyOrders = () => {
         console.log("dpfjqkftod");
       });
   }
+  if(isLoading) return <>...</>
   return (
     <>
     <O.UserInfo>
