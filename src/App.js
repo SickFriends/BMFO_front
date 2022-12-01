@@ -20,6 +20,7 @@ import Logout from "./components/Logout";
 import { OrderDetail } from "./components/OrderDetail";
 import { MyOrders } from "./pages/MyOrders";
 import AdminPage from "./pages/AdminPage";
+import LockerDetail from "./pages/LockerDetail";
 function App() {
   const [user, setUser] = useRecoilState(userState);
 
@@ -44,7 +45,12 @@ function App() {
         <Route exact path="/iceCream" element={<IceCream />}></Route>
         <Route exact path="/drink" element={<Drink />}></Route>
         <Route exact path="/frozenFood" element={<FrozenFood />}></Route>
-        <Route exact path="/adminPage" element={<AdminPage/>}></Route>
+        <Route exact path="/adminPage" element={<AdminPage />}></Route>
+        <Route
+          exact
+          path="/lockerDetail/:lockerId"
+          element={<LockerDetail />}
+        ></Route>
       </Routes>
     </>
   );

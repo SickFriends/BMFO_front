@@ -42,20 +42,23 @@ const ShoppingBasket = () => {
       })
       .then((res) => {
         loadTossPayments(clientKey).then((tossPayments) => {
-            tossPayments.requestPayment("카드", {
-              amount: allPrice,
-              orderId: res.data.orderId,
-              orderName:
-                productList[0].product.name +
-                " 외 " +
-                (productList.length - 1).toString() +
-                "건",
-              successUrl: `http://localhost:8000/api/order/purchaseSuccess?lockerPass=${password}`,
-              failUrl: "http://localhost:8000/api/order/purchaseFail",
-            });
+          tossPayments.requestPayment("카드", {
+            amount: allPrice,
+            orderId: res.data.orderId,
+            orderName:
+              productList[0].product.name +
+              " 외 " +
+              (productList.length - 1).toString() +
+              "건",
+            successUrl: `http://localhost:8000/api/order/purchaseSuccess?lockerPass=${password}`,
+            failUrl: "http://localhost:8000/api/order/purchaseFail",
           });
         });
-      };
+      })
+      .catch((e) => {
+        alert(e.response.data.message);
+      });
+  };
 
   const deleteBasketProduct = (basketProductId) => {
     setProductList((prodLis) => [
