@@ -51,9 +51,7 @@ export default function LockerDetail() {
             });
         }
       })
-      .catch((e) => {
-        console.log(e);
-      });
+      .catch((e) => {});
   }, []);
 
   return (
@@ -65,8 +63,8 @@ export default function LockerDetail() {
         <button
           style={{
             backgroundColor: "greenyellow",
-            width: "100px",
-            height: "30px",
+            width: "80px",
+            height: "80px",
             borderRadius: "5px",
             marginTop: "5px",
           }}
@@ -131,7 +129,9 @@ export default function LockerDetail() {
                   )}
                 </span>
                 <span>배정된 라커 : {order.lockerId}번</span>
-                <span>결제 상태 : {approveStatus[order.status].name}</span>
+                <span style={{ color: approveStatus[order.status].color }}>
+                  결제 상태 : {approveStatus[order.status].name}
+                </span>
               </A.LogTime>
               <A.Cancle>
                 <AiOutlineDelete className="icon" />

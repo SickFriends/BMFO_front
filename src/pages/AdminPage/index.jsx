@@ -22,7 +22,6 @@ export default function AdminPage() {
     axios
       .get("/api/order/getAllActivatedOrders")
       .then(({ data }) => {
-        console.log(data);
         setActivatedOrders(data);
       })
       .catch((e) => {});
@@ -35,6 +34,7 @@ export default function AdminPage() {
           lockerList.map((locker, indx) => {
             return (
               <A.ListItem
+                key={indx}
                 onClick={() => {
                   navigate(`/lockerDetail/${locker?.lockerId}`);
                 }}

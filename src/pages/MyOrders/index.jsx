@@ -7,7 +7,7 @@ import * as O from "./myOrders.style";
 import { userState } from "../../store/user";
 import { useRecoilState } from "recoil";
 import ActivatedOrder from "../../components/ActivatedOrders";
-import { MdOutlineNavigateNext } from "react-icons/md"
+import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdOutlineNavigateBefore } from "react-icons/md";
 
 export const MyOrders = () => {
@@ -19,18 +19,27 @@ export const MyOrders = () => {
   const [user, setUser] = useRecoilState(userState);
 
   useEffect(() => {
-    axios.get("/api/order/getMyOrders?page=" + page).then(({ data }) => {
-      setOrders(data.orders);
-      setMaxPage(data.maxPage);
-    });
+    if (user.role === 1) {
+      axios.get("/api/order/getMyOrders?page=" + page).then(({ data }) => {
+        console.log(data.orders);
+        setOrders(data.orders);
+        setMaxPage(data.maxPage);
+        console.log(data.maxPage);
+      });
+    }
   }, [page]);
+
   useEffect(() => {
-    axios.get("api/order/getMyActivatedOrders").then((res) => {
-      console.log(res.data);
-      setInOrders([...res.data]);
-    }); 
+    if (user.role === 1) {
+      axios.get("api/order/getMyActivatedOrders").then((res) => {
+        console.log(res.data);
+        setInOrders([...res.data]);
+      });
+    }
   }, []);
-  const activatedOrder = inOrders.map((data, idx) => (<ActivatedOrder key={idx} index={idx} data={data} />))
+  const activatedOrder = inOrders.map((data, idx) => (
+    <ActivatedOrder key={idx} index={idx} data={data} />
+  ));
 
   const orderList = orders.map((order, index) => {
     return (
@@ -67,45 +76,55 @@ export const MyOrders = () => {
       .catch(() => {
         console.log("dpfjqkftod");
       });
-  }
+  };
+
+  const role = ["", "구매자", "판매자"];
   return (
     <>
-    <O.UserInfo>
-      <AiOutlineUser size={40} />
-      <div>{user.username}</div>
-      <div>({user.email})</div>
-      <button onClick={logout}>로그아웃</button>
-    </O.UserInfo>
-    <O.ActivatedOrder>
-      <div className="activatedTitle">활성화된 주문</div>
-      <div className="ordersContainer">{activatedOrder}</div>
-    </O.ActivatedOrder>
-    <O.Orders>
-      <div className="orderTitle">주문 히스토리</div>
-    <div>
-      {orderList}
-      <O.Pages>
+      <O.UserInfo>
+        <AiOutlineUser size={40} />
+        <div>{user.username}</div>
+        <div>({user.email})</div>
+        <div>{role[user.role]}</div>
+        <button onClick={logout}>로그아웃</button>
+      </O.UserInfo>
+      {user.role === 1 ? (
         <div>
-        {page > 1 && (
-          <MdOutlineNavigateBefore
-            onClick={() => {
-              setPage((d) => d - 1);
-            }}
-          />
-        ) 
-        }
-        <p>{page}</p>
-        {page < maxPage && 
-          <MdOutlineNavigateNext
-            onClick={() => {
-              setPage((d) => d + 1);
-            }}
-          />
-        }
+          <O.ActivatedOrder>
+            <div className="activatedTitle">활성화된 주문</div>
+            <div className="ordersContainer">{activatedOrder}</div>
+          </O.ActivatedOrder>
+          <O.Orders>
+            <div className="orderTitle">주문 히스토리</div>
+            <div>
+              {orderList}
+              <O.Pages>
+                <div>
+                  {page > 1 && (
+                    <MdOutlineNavigateBefore
+                      onClick={() => {
+                        setPage((d) => d - 1);
+                      }}
+                    />
+                  )}
+                  <p>{page}</p>
+                  {page < maxPage && (
+                    <MdOutlineNavigateNext
+                      onClick={() => {
+                        setPage((d) => d + 1);
+                      }}
+                    />
+                  )}
+                </div>
+              </O.Pages>
+            </div>
+          </O.Orders>
         </div>
-      </O.Pages>
-    </div>
-    </O.Orders>
+      ) : (
+        <div>
+          <button>관리자모드</button>
+        </div>
+      )}
     </>
   );
 };

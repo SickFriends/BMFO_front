@@ -17,7 +17,7 @@ import { userState } from "./store/user";
 import { useRecoilState } from "recoil";
 import { useEffect } from "react";
 import Logout from "./components/Logout";
-import { OrderDetail } from "./components/OrderDetail";
+import { OrderDetail } from "./pages/OrderDetail";
 import { MyOrders } from "./pages/MyOrders";
 import AdminPage from "./pages/AdminPage";
 import LockerDetail from "./pages/LockerDetail";
