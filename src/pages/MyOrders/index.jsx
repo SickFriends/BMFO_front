@@ -7,7 +7,7 @@ import * as O from "./myOrders.style";
 import { userState } from "../../store/user";
 import { useRecoilState } from "recoil";
 import ActivatedOrder from "../../components/ActivatedOrders";
-import { MdOutlineNavigateNext } from "react-icons/md"
+import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdOutlineNavigateBefore } from "react-icons/md";
 
 export const MyOrders = () => {
@@ -20,20 +20,29 @@ export const MyOrders = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    axios.get("/api/order/getMyOrders?page=" + page).then(({ data }) => {
-      setOrders(data.orders);
-      setMaxPage(data.maxPage);
-    });
+    if (user.role === 1) {
+      axios.get("/api/order/getMyOrders?page=" + page).then(({ data }) => {
+        console.log(data.orders);
+        setOrders(data.orders);
+        setMaxPage(data.maxPage);
+        console.log(data.maxPage);
+      });
+    }
   }, [page]);
+
   useEffect(() => {
-    setIsLoading(true);
+    if (user.role === 1) {
+      setIsLoading(true);
     axios.get("api/order/getMyActivatedOrders").then((res) => {
       console.log(res.data);
       setInOrders([...res.data]);
       setIsLoading(false);
     }); 
+    }
   }, []);
-  const activatedOrder = inOrders.map((data, idx) => (<ActivatedOrder key={idx} index={idx} data={data} />))
+  const activatedOrder = inOrders.map((data, idx) => (
+    <ActivatedOrder key={idx} index={idx} data={data} />
+  ));
 
   const orderList = orders.map((order, index) => {
     return (
@@ -70,7 +79,9 @@ export const MyOrders = () => {
       .catch(() => {
         console.log("dpfjqkftod");
       });
-  }
+  };
+
+  const role = ["", "구매자", "판매자"];
   let pages = [];
     for(let i = 1; i <= maxPage; i++){
       pages.push(
@@ -89,13 +100,16 @@ export const MyOrders = () => {
   if(isLoading) return <>...</>
   return (
     <>
-    <O.UserInfo>
-      <AiOutlineUser size={40} />
-      <div>{user.username}</div>
-      <div>({user.email})</div>
-      <button onClick={logout}>로그아웃</button>
-    </O.UserInfo>
-    <O.ActivatedOrder>
+      <O.UserInfo>
+        <AiOutlineUser size={40} />
+        <div>{user.username}</div>
+        <div>({user.email})</div>
+        <div>{role[user.role]}</div>
+        <button onClick={logout}>로그아웃</button>
+      </O.UserInfo>
+      {user.role === 1 ? (
+        <div>
+          <O.ActivatedOrder>
       <div className="activatedTitle">활성화된 주문</div>
       <div className="ordersContainer">{inOrders.length === 0 ? <div>활성화 된 주문이 없습니다</div> : {activatedOrder}}</div>
     </O.ActivatedOrder>
@@ -114,17 +128,23 @@ export const MyOrders = () => {
         ) 
         }
         <div>{pages}</div>
-        {page < maxPage && 
-          <MdOutlineNavigateNext
-            onClick={() => {
-              setPage((d) => d + 1);
-            }}
-          />
-        }
+                  {page < maxPage && (
+                    <MdOutlineNavigateNext
+                      onClick={() => {
+                        setPage((d) => d + 1);
+                      }}
+                    />
+                  )}
+                </div>
+              </O.Pages>
+            </div>
+          </O.Orders>
         </div>
-      </O.Pages>
-    </div>
-    </O.Orders>
+      ) : (
+        <div>
+          <button>관리자모드</button>
+        </div>
+      )}
     </>
   );
 };

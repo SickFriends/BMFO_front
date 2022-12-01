@@ -1,15 +1,60 @@
 import * as A from "./AdminPage.style";
 import React from "react";
 import { AiFillDelete, AiOutlineDelete } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
 export default function AdminPage() {
+  const [lockerList, setLockerList] = useState([]);
+  const [activatedOrders, setActivatedOrders] = useState();
+  const navigate = useNavigate();
+  useEffect(() => {
+    axios
+      .get("/api/locker")
+      .then((res) => {
+        setLockerList(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+
+    axios
+      .get("/api/order/getAllActivatedOrders")
+      .then(({ data }) => {
+        setActivatedOrders(data);
+      })
+      .catch((e) => {});
+  }, []);
+
   return (
     <A.Layout>
       <A.Wrapper>
-        <A.ListItem bgcolor = {"white"}>1</A.ListItem>
-        <A.ListItem bgcolor = {"lightblue"}>2</A.ListItem>
-        <A.ListItem bgcolor = {"#FF5675"}>3</A.ListItem>
-        <A.ListItem bgcolor = {"white"}>4</A.ListItem>
+        {lockerList.length ? (
+          lockerList.map((locker, indx) => {
+            return (
+              <A.ListItem
+                key={indx}
+                onClick={() => {
+                  navigate(`/lockerDetail/${locker?.lockerId}`);
+                }}
+                bgcolor={() => {
+                  if (locker.isUsing) {
+                    return "#FF5675";
+                  } else if (locker.isWating) {
+                    return "skyblue";
+                  } else {
+                    return "white";
+                  }
+                }}
+              >
+                {locker.lockerId}
+              </A.ListItem>
+            );
+          })
+        ) : (
+          <h2>라커를 로딩중</h2>
+        )}
       </A.Wrapper>
       <A.LogWrapper>
         <A.LogItem>
@@ -37,7 +82,9 @@ export default function AdminPage() {
           </A.Cancle>
         </A.LogItem>
       </A.LogWrapper>
-      <Link to ="/"><A.Detail>더보기</A.Detail></Link>
+      <Link to="/">
+        <A.Detail>더보기</A.Detail>
+      </Link>
     </A.Layout>
   );
 }
