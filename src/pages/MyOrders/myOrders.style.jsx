@@ -52,4 +52,10 @@ export const Orders = styled.div`
     .orderTitle{
         font-size: 30px;
     }
+    .pageBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
 `
