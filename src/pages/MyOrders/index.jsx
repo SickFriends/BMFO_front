@@ -71,6 +71,21 @@ export const MyOrders = () => {
         console.log("dpfjqkftod");
       });
   }
+  let pages = [];
+    for(let i = 1; i <= maxPage; i++){
+      pages.push(
+        <div onClick={() => {
+          setPage(i)
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }}
+        style={page === i ? {backgroundColor: '#5bcef5', color: "white"} : {}}
+        className="pageBox"
+        >{i}</div>
+      )
+    }
   if(isLoading) return <>...</>
   return (
     <>
@@ -82,12 +97,12 @@ export const MyOrders = () => {
     </O.UserInfo>
     <O.ActivatedOrder>
       <div className="activatedTitle">활성화된 주문</div>
-      <div className="ordersContainer">{activatedOrder}</div>
+      <div className="ordersContainer">{inOrders.length === 0 ? <div>활성화 된 주문이 없습니다</div> : {activatedOrder}}</div>
     </O.ActivatedOrder>
     <O.Orders>
       <div className="orderTitle">주문 히스토리</div>
-    <div>
-      {orderList}
+    <div style={{width: '100%'}}>
+      {orders.length === 0 ? <div>주문 내역이 없습니다.</div> : orderList}
       <O.Pages>
         <div>
         {page > 1 && (
@@ -98,7 +113,7 @@ export const MyOrders = () => {
           />
         ) 
         }
-        <p>{page}</p>
+        <div>{pages}</div>
         {page < maxPage && 
           <MdOutlineNavigateNext
             onClick={() => {
