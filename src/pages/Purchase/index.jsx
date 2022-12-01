@@ -48,7 +48,7 @@ const Purchase = () => {
       </P.imgBox>
       <P.saleBox>
         <P.titleBox>{product.name}</P.titleBox>
-        <P.priceBox>₩{product.price}</P.priceBox>
+        <P.priceBox>₩{product.price * count}</P.priceBox>
         <P.count>수량</P.count>
         <P.IncDec>
           <AiOutlineMinusCircle
@@ -68,7 +68,7 @@ const Purchase = () => {
           />
         </P.IncDec>
         <P.buttons>
-          <button onClick={put}>장바구니</button>
+          <button onClick={put}>장바구니 담기</button>
         </P.buttons>
       </P.saleBox>
     </P.container>

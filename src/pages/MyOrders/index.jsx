@@ -17,6 +17,7 @@ export const MyOrders = () => {
   const [inOrders, setInOrders] = useState([]);
   const navigate = useNavigate();
   const [user, setUser] = useRecoilState(userState);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (user.role === 1) {
@@ -31,10 +32,12 @@ export const MyOrders = () => {
 
   useEffect(() => {
     if (user.role === 1) {
-      axios.get("api/order/getMyActivatedOrders").then((res) => {
-        console.log(res.data);
-        setInOrders([...res.data]);
-      });
+      setIsLoading(true);
+    axios.get("api/order/getMyActivatedOrders").then((res) => {
+      console.log(res.data);
+      setInOrders([...res.data]);
+      setIsLoading(false);
+    }); 
     }
   }, []);
   const activatedOrder = inOrders.map((data, idx) => (
@@ -79,6 +82,22 @@ export const MyOrders = () => {
   };
 
   const role = ["", "구매자", "판매자"];
+  let pages = [];
+    for(let i = 1; i <= maxPage; i++){
+      pages.push(
+        <div onClick={() => {
+          setPage(i)
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }}
+        style={page === i ? {backgroundColor: '#5bcef5', color: "white"} : {}}
+        className="pageBox"
+        >{i}</div>
+      )
+    }
+  if(isLoading) return <>...</>
   return (
     <>
       <O.UserInfo>
@@ -91,23 +110,24 @@ export const MyOrders = () => {
       {user.role === 1 ? (
         <div>
           <O.ActivatedOrder>
-            <div className="activatedTitle">활성화된 주문</div>
-            <div className="ordersContainer">{activatedOrder}</div>
-          </O.ActivatedOrder>
-          <O.Orders>
-            <div className="orderTitle">주문 히스토리</div>
-            <div>
-              {orderList}
-              <O.Pages>
-                <div>
-                  {page > 1 && (
-                    <MdOutlineNavigateBefore
-                      onClick={() => {
-                        setPage((d) => d - 1);
-                      }}
-                    />
-                  )}
-                  <p>{page}</p>
+      <div className="activatedTitle">활성화된 주문</div>
+      <div className="ordersContainer">{inOrders.length === 0 ? <div>활성화 된 주문이 없습니다</div> : {activatedOrder}}</div>
+    </O.ActivatedOrder>
+    <O.Orders>
+      <div className="orderTitle">주문 히스토리</div>
+    <div style={{width: '100%'}}>
+      {orders.length === 0 ? <div>주문 내역이 없습니다.</div> : orderList}
+      <O.Pages>
+        <div>
+        {page > 1 && (
+          <MdOutlineNavigateBefore
+            onClick={() => {
+              setPage((d) => d - 1);
+            }}
+          />
+        ) 
+        }
+        <div>{pages}</div>
                   {page < maxPage && (
                     <MdOutlineNavigateNext
                       onClick={() => {
