@@ -2,7 +2,7 @@ import * as P from "./purchase.style";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -10,6 +10,7 @@ const Purchase = () => {
   const [count, setCount] = useState(1);
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(null);
+  const navigate = useNavigate();
   const params = useParams();
   const id = params.id;
   useEffect(() => {
@@ -33,7 +34,7 @@ const Purchase = () => {
     axios
       .post("/api/basket/putProduct", data)
       .then((res) => {
-        window.location.replace("/");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
@@ -47,7 +48,7 @@ const Purchase = () => {
       </P.imgBox>
       <P.saleBox>
         <P.titleBox>{product.name}</P.titleBox>
-        <P.priceBox>₩{product.price}</P.priceBox>
+        <P.priceBox>₩{product.price * count}</P.priceBox>
         <P.count>수량</P.count>
         <P.IncDec>
           <AiOutlineMinusCircle
@@ -67,7 +68,7 @@ const Purchase = () => {
           />
         </P.IncDec>
         <P.buttons>
-          <button onClick={put}>장바구니</button>
+          <button onClick={put}>장바구니 담기</button>
         </P.buttons>
       </P.saleBox>
     </P.container>

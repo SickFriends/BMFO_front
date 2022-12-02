@@ -50,10 +50,13 @@ const ShoppingBasket = () => {
               " 외 " +
               (productList.length - 1).toString() +
               "건",
-            successUrl: `http://localhost:8000/api/order/purchaseSuccess`,
+            successUrl: `http://localhost:8000/api/order/purchaseSuccess?lockerPass=${password}`,
             failUrl: "http://localhost:8000/api/order/purchaseFail",
           });
         });
+      })
+      .catch((e) => {
+        alert(e.response.data.message);
       });
   };
 

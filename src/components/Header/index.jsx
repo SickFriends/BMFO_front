@@ -67,24 +67,19 @@ const Header = () => {
         <H.Category bar={isFrozenFoodPage}>
           <Link to="/frozenFood">냉동식품</Link>
         </H.Category>
-        <H.Category>
+        {user.role === 2 ? <H.Category>
           <Link to="/addProduct">식품 추가</Link>
-        </H.Category>
+        </H.Category> : <></>}
+        
       </H.CategoryBox>
       <H.IconBox>
-        <H.Icon
-          firstIcon={true}
-          onClick={() => {
-            user.isLogin
-              ? (window.location.href = "/logout")
-              : (window.location.href = "/login");
-          }}
-        >
-          <Link style={{ display: 'flex', flexDirection: 'column'}} to={user.isLogin ? "/myOrders" : ""}>
-            <AiOutlineUser size={40} />
-            <span>{user.isLogin ? user.username + "님" : "로그인"}</span>
-          </Link>
+        <H.Icon firstIcon={true} >
+            <Link style={{ display: 'flex', flexDirection: 'column'}} to={user.isLogin ? "/myOrders" : "/login"}>
+                <AiOutlineUser size={40} />
+                <span>{user.isLogin ? user.username + "님" : "로그인"}</span>
+            </Link>
         </H.Icon>
+        
         <H.Icon>
           <Link to="/shoppingBasket">
             <BsCart4 size={40} />

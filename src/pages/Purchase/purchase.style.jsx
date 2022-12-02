@@ -60,10 +60,10 @@ export const IncDec = styled.div`
 export const buttons = styled.div`
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     
     button{
-        width: 40%;
+        width: 60%;
         height: 130%;
         background-color: #5bcef5;
         color : white;
