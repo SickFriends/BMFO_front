@@ -20,6 +20,7 @@ import Logout from "./components/Logout";
 import { OrderDetail } from "./components/OrderDetail";
 import { MyOrders } from "./pages/MyOrders";
 import AdminPage from "./pages/AdminPage";
+import Detail from "./pages/Detail";
 function App() {
   const [user, setUser] = useRecoilState(userState);
 
@@ -45,6 +46,7 @@ function App() {
         <Route exact path="/drink" element={<Drink />}></Route>
         <Route exact path="/frozenFood" element={<FrozenFood />}></Route>
         <Route exact path="/adminPage" element={<AdminPage/>}></Route>
+        <Route exact path="/detail" element={<Detail/>}></Route>
       </Routes>
     </>
   );

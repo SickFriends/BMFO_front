@@ -6,10 +6,18 @@ export default function AdminPage() {
   return (
     <A.Layout>
       <A.Wrapper>
-        <A.ListItem bgcolor = {"white"}>1</A.ListItem>
-        <A.ListItem bgcolor = {"lightblue"}>2</A.ListItem>
-        <A.ListItem bgcolor = {"#FF5675"}>3</A.ListItem>
-        <A.ListItem bgcolor = {"white"}>4</A.ListItem>
+        <Link to="/detail">
+          <A.ListItem bgcolor={"white"}>1</A.ListItem>
+        </Link>
+        <Link to="/detail">
+          <A.ListItem bgcolor={"lightblue"}>2</A.ListItem>
+        </Link>
+        <Link to="/detail">
+          <A.ListItem bgcolor={"#FF5675"}>3</A.ListItem>
+        </Link>
+        <Link to="/detail">
+          <A.ListItem bgcolor={"white"}>4</A.ListItem>
+        </Link>
       </A.Wrapper>
       <A.LogWrapper>
         <A.LogItem>
@@ -37,7 +45,9 @@ export default function AdminPage() {
           </A.Cancle>
         </A.LogItem>
       </A.LogWrapper>
-      <Link to ="/"><A.Detail>더보기</A.Detail></Link>
+      <Link to="/">
+        <A.Detail>더보기</A.Detail>
+      </Link>
     </A.Layout>
   );
 }
